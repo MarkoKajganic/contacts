@@ -3,9 +3,14 @@
 </p>
 <ul *ngFor="let contact of contacts">
 
-  <li *ngIf="contact.firstName == 'Martin' && contact.lastName == 'Hess'"> 
+  <li > 
     
-   {{ contact.firstName }} {{contact.lastName}} {{contact.email}} </li>
+   {{ contact.firstName }} {{contact.lastName}} {{contact.email}} 
+  
+   <button class="btn btn-danger" 
+   (click)="removeContact(contact)"> Remove </button>
+
+  </li>
 
 </ul>
 
