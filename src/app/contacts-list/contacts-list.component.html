@@ -1,18 +1,26 @@
-<p>
-  contacts-list works!
-</p>
-<ul *ngFor="let contact of contacts">
+<table class="table table">
 
-  <li > 
-    
-   {{ contact.firstName }} {{contact.lastName}} {{contact.email}} 
+    <thead>
   
-   <button class="btn btn-danger" 
-   (click)="removeContact(contact)"> Remove </button>
-
-  </li>
-
-</ul>
-
-
-
+      <tr>
+        <th>First Name</th>  
+        <th>Last Name</th>
+        <th>Email</th> 
+        <th>Actions</th>
+      </tr>
+  
+    </thead>
+  
+    <tr *ngFor="let contact of contacts">
+  
+      <td>{{ contact.firstName }}</td>
+      <td>{{ contact.lastName }}</td>
+      <td>{{ contact.email }}</td>
+  
+      <td>
+          <button class="btn btn-danger" (click)="removeContact(contact)"> X </button>
+      </td>
+  
+    </tr>
+  
+  </table>
