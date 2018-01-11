@@ -11,11 +11,11 @@
   
     </thead>
   
-    <tr *ngFor="let contact of contacts">
+    <tr *ngFor="let contact of contacts | filter:searchTerm">
   
       <td>{{ contact.firstName }}</td>
       <td>{{ contact.lastName }}</td>
-      <td>{{ contact.email }}</td>
+      <td>{{ contact.email | uppercase }}</td>
   
       <td>
           <button class="btn btn-danger" (click)="removeContact(contact)"> X </button>
@@ -24,5 +24,4 @@
     </tr>
   </table>
 
-  <input type="text" name="" [(ngModel)]="testModel">
-  <div> Input value: {{testModel}} </div>
+Search term:  <input type="text" name="" [(ngModel)]="searchTerm">
