@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -38,7 +40,8 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(
       appRoutes
-    )
+    ),
+    HttpClientModule
   ],
   providers: [ContactsService],
   bootstrap: [AppComponent]

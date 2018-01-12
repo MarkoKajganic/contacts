@@ -17,7 +17,9 @@ export class ContactsListComponent implements OnInit {
   
 
   constructor(private _contactsService: ContactsService) {
-    this.contacts = this._contactsService.getContacts();
+    this._contactsService.getContacts().subscribe(contacts => {
+      this.contacts = contacts;
+    });
   }
 
   removeContact(contact)
